@@ -22,4 +22,4 @@ print(age)
 age = age + (364 - 42) / 364    # int --> float
 print(age)
 is_student = True   # bool
-print(is_student)
+print(is_student) 
