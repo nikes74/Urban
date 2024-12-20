@@ -19,7 +19,7 @@ name = 'Alexey' # str
 print(name)
 age = 50    # int
 print(age)
-age = age + (364 - 42) / 364    # int --> float
+age = age + (366 - 42) / 366    # int --> float
 print(age)
 is_student = True   # bool
-print(is_student) 
+print(is_student)
