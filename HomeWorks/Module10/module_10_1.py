@@ -83,9 +83,7 @@ thr_second.join()
 thr_third.join()
 thr_fourh.join()
 
-# Взятие текущего времени
-
-time2_stop = datetime.now()
+time2_stop = datetime.now()    # Взятие текущего времени
 time2_res = time2_stop - time2_start
 print(f'Время работы потоков {time2_res}')
 # Вывод разницы начала и конца работы потоков
