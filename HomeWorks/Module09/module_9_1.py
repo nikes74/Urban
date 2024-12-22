@@ -63,7 +63,6 @@ def midle(int_list):  # - принимает список, возвращает 
     result = result / len_(int_list)
     return result
 
-
 print(apply_all_func(int_list, min, max, sum, midle))
 print(apply_all_func(int_list, len_, sorted_))
 
