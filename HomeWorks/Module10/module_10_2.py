@@ -36,7 +36,7 @@ class Knight(Thread):
         num_days = 0
         enemyes = 100
         while enemyes > 0: # >= self.power:
-            sleep(1)    # задержка в 1 секунду
+            sleep(1)    # задержка в 1 секунду = 1 день сражения
             num_days += 1   # количество дней сражения
             enemyes = enemyes - self.power
             if enemyes < 0:
@@ -45,13 +45,12 @@ class Knight(Thread):
 
         print(f'{self.name_} одержал победу спустя {num_days} дней(дня)!')
 
-threads = []
-
 knight1 = Knight('Lancelot', 6)
 knight1.start()
 knight2 = Knight('Arthur', 12)
 knight2.start()
 
+threads = []
 threads.append(knight1)
 threads.append(knight2)
 
