@@ -16,10 +16,10 @@
 
 # __________________________Р_Е_Ш_Е_Н_И_Е:_______________________________________________ #
 name = 'Alexey' # str
-print(name)
+print('Name:', name)
 age = 50    # int
-print(age)
-age = age + (366 - 42) / 366    # int --> float
-print(age)
+print('Age:', age)
+age = age + (366 - 37) / 366    # int --> float
+print('Complete age:', age)
 is_student = True   # bool
-print(is_student)
+print("Is a student -", is_student)
