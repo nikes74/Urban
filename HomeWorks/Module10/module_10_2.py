@@ -46,7 +46,7 @@ class Knight(Thread):
         print(f'{self.name_} одержал победу спустя {num_days} дней(дня)!')
 
 knight1 = Knight('Lancelot', 6)
-knight1.start() # запускаем поток №1
+knight1.start()     # запускаем поток №1
 knight2 = Knight('Arthur', 12)
 knight2.start()
 
