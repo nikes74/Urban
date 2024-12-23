@@ -43,11 +43,11 @@ class Iterator():
         self.i = 0  # обнуляем счетчик перед циклом
         return self # возвращаем ссылку на самого себя, т.к. наш объект должен быть итератором
 
-    def __next__(self):
+    def __next__(self): # метод возвращает значения по требованию (ленивые вычисления)
         self.i += 1
         if self.i > 1:
             self.pointer += self.step   # увеличиваем атрибут pointer на step
-            if self.step < 0:
+            if self.step < 0:   # итерация на уменьшение
                 if self.pointer < self.stop:
                     raise StopIteration()
             else:
@@ -58,8 +58,8 @@ class Iterator():
 try:
     print('Итерация от 100 до 200 с шагом 0 :')
     iter1 = Iterator(100, 200, 0)
-    for k in iter1:
-        print(k, end=' ')
+    for i in iter1:
+        print(i, end=' ')
 except StepValueError:
     print('Шаг указан неверно')
 
