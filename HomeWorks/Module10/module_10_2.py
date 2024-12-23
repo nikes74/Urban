@@ -46,7 +46,7 @@ class Knight(Thread):
         print(f'{self.name_} одержал победу спустя {num_days} дней(дня)!')
 
 knight1 = Knight('Lancelot', 6)
-knight1.start()
+knight1.start() # запускаем поток №1
 knight2 = Knight('Arthur', 12)
 knight2.start()
 
@@ -55,5 +55,5 @@ threads.append(knight1)
 threads.append(knight2)
 
 for thread in threads:
-    thread.join()
+    thread.join()   # ожидаем завершения потоков
 print(f'\nВсе враги повержены, битвы закончены!')
