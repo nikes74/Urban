@@ -39,7 +39,7 @@ class Knight(Thread):
             sleep(1)    # задержка в 1 секунду = 1 день сражения
             num_days += 1   # количество дней сражения
             enemyes = enemyes - self.power
-            if enemyes < 0:
+            if enemyes <= 0:
                 enemyes = 0
             print(f'{self.name_} сражается {num_days}-й день..., осталось {enemyes} воинов.')
 
