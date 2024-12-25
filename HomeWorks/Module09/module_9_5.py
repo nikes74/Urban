@@ -1,4 +1,4 @@
-# Домашнее задание по теме "Итераторы"
+# ИСПРАВЛЕНО # Домашнее задание по теме "Итераторы" # ИСПРАВЛЕНО #
 
 # Задача "Range - это просто":
 # Создайте пользовательский класс исключения StepValueError, который наследуется от ValueError.
@@ -45,7 +45,13 @@ class Iterator():
 
     def __next__(self): # метод возвращает значения по требованию (ленивые вычисления)
         self.i += 1
-        if self.i > 1:
+        if self.start <= self.stop and self.step < 0:
+            # print('Несоответствие границ / Неверный знак шага')
+            raise StopIteration
+        elif self.start >= self.stop and self.step > 0:
+            # print('Несоответствие границ / Неверный знак шага')
+            raise StopIteration()
+        elif self.i > 1:
             self.pointer += self.step   # увеличиваем атрибут pointer на step
             if self.step < 0:   # итерация на уменьшение
                 if self.pointer < self.stop:
@@ -80,4 +86,3 @@ for i in iter4:
 print('\n'+'Итерация от 10 до 1 с шагом 1 :')
 for i in iter5:
     print(i, end=' ')
-print()
