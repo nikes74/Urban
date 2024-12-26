@@ -1,4 +1,4 @@
-# Домашнее задание по теме "Введение в функциональное программирование"
+# ИСПРАВЛЕНО # Домашнее задание по теме "Введение в функциональное программирование" # ИСПРАВЛЕНО #
 
 # Задача "Вызов разом":
 
@@ -21,9 +21,10 @@
 def apply_all_func(int_list, *functions):
     results = {}
     for func in functions:
-        # name = func.__name__
-        # result = func(int_list)
-        results.update({func.__name__: func(int_list)})
+        # # name = func.__name__
+        # # result = func(int_list)
+        # results.update({func.__name__: func(int_list)}) # было так, исправил на:
+        results[func.__name__] = func(int_list) # заполняем словарь через присваивание
     return results
 
 int_list = [12, 4, 75.67, -45, 8.846465849]
