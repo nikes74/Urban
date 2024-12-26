@@ -1,4 +1,4 @@
-# Домашнее задание по теме "Декораторы"
+# ИСПРАВЛЕНО # Домашнее задание по теме "Декораторы" # ИСПРАВЛЕНО #
 
 # Задание:
 # Напишите 2 функции:
@@ -17,15 +17,14 @@ def is_prime(func):
         n = func(*args)
         if n < 2:  # не 0 и не 1
             res = f'{n} - не простое и не сложное число'
-        elif n == 2:
+        elif n == 2 or n == 3:
             res = f'{n} - Простое число'
         else:
             f = n ** (1 / 2)  # Корень квадратный из n
-            k = int(f + 1)
-            lst = range(2, int(f + 1))
-            for a in range(2, int(f + 1)):
+            for a in range(2, int(f) + 1):
                 if n % a == 0:
                     res = f'{n} - Составное число'
+                    break
                 else:
                     res = f'{n} - Простое число'
         print(res)
@@ -34,7 +33,10 @@ def is_prime(func):
 
 @is_prime
 def sum_three(a: int, b: int, c: int):
+    global saved_args   # для вывода значений аргументов функций в итоговую строку с результатом print(result)
+    saved_args = {**locals()}
+    # print(f'Cумма чисел {locals().get('a')}, {locals().get('b')} и {locals().get('c')}:') # а можно и в начале ;-)
     return a + b + c
 
-result = sum_three(15, 8, 28)
-print(result, '- сумма чисел 5, 8 и 28')
+result = sum_three(35, 8, 28) # 15, 8, 28
+print(result, f'- cумма чисел {saved_args.get('a')}, {saved_args.get('b')} и {saved_args.get('c')}')
